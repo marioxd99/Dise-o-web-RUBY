@@ -1,0 +1,126 @@
+body {
+    width: 100%;
+    height: 100vh;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(background.jpeg);
+    background-size: cover;
+    background-position: center;
+}
+
+.navbar {
+    width: 100%;
+    height: 80px;
+    margin: auto;
+    padding: 15px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar ul li {
+    list-style: none;
+    display: inline-block;
+    margin: 0 10px;
+    position: relative;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-family: sans-serif;
+}
+
+.navbar ul li::after {
+    content: '';
+    height: 3px;
+    width: 0;
+    background: #ffc107;
+    position: absolute;
+    left: 0;
+    bottom: -10px;
+    transition: 0.5s;
+}
+
+.navbar ul li:hover::after {
+    width: 100%;
+}
+
+.logo {
+    margin-left: 20px;
+    transition: transform .4s;
+}
+
+.logo:hover {
+    transform: scale(1.3);
+}
+
+#note_container {
+    background-color: #518876;
+    margin-top: 20px;
+    min-height: 85vh;
+    border-style: groove;
+}
+
+.hide {
+    display: none;
+    outline: none;
+}
+
+.note:hover .hide {
+    display: block;
+}
+
+.note.over {
+    border: 3px dotted #666;
+}
+
+.Day {
+    font-size: 40px;
+    line-height: 100px;
+    margin-left: 135px;
+    font-weight: bold;
+    color: #fff;
+    height: 100px;
+}
+
+[draggable] {
+    user-select: none;
+}
+
+#note_text {
+    color: black;
+    max-height: 16vh;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#icon_h {
+    margin-left: 20px;
+    transition: transform .4s;
+}
+
+#icon_h:hover {
+    transform: scale(1.2);
+}
+
+.card.note {
+    background-color: #ffffff;
+    margin-top: 20px;
+}
+
+.s-link {
+    color: #000;
+    text-decoration: none
+}
+
+#show-card {
+    background-color: #fcfbb5;
+    border: 15px solid transparent;
+    padding: 15px;
+    border-image: url(border.png) 40% stretch;
+    border-radius: 10px;
+}
+
+#show-title {
+    font-size: 150%;
+    text-align: center;
+}

@@ -1,0 +1,10 @@
+
+<div class="card-body", id="note_container">
+    <h1>Editing Note</h1>
+
+    <%= render 'form', note: @note %>
+    <br/><br/>
+    <%= link_to 'Show', @note , class:"btn btn-secondary" %> 
+    &nbsp;&nbsp;
+    <%= link_to 'Back', notes_path, class:"btn btn-secondary" %>
+</div>

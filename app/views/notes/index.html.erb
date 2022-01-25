@@ -1,0 +1,40 @@
+<div class="container-fluid" >
+  <div class="card" id="note_container">
+    <div class="row m-2"  >
+      <% @notes.each do |note| %>
+        <% if current_user && (note.user == current_user || current_user.admin?)%>
+          <div class="col-12 col-md-2" style="margin-top:10px;">
+            <div draggable="true" class="card note" style="width:auto;max-height: auto;min-height: 20vh;">
+              <div class="card-body" style="text-align: center;"> 
+                <% if note.image.blank? %>
+                    <p></p>
+                  <% else %>
+                    <%= image_tag(note.image , style:'margin-bottom:15px;max-width:100%;max-height:100%;', class:"card-img-top") %> 
+                <% end %>
+               <h5 class="card-title" style="text-decoration:none;font-weight: bold;"><%= link_to note.title, note, class:"s-link" %></h5>
+                <p class="card-text" id="note_text"><%= note.description %></p>
+                <br/>
+                <div class="container-fluid">
+                  <div class="row">
+                    <div class="col" style="display:inline-block;width:50%;">
+                      <table>
+                      <td id="icon_h">
+                      <%= link_to (image_tag "edit.png" , style: 'height: 1.875rem;width: 1.875rem;' ), edit_note_path(note), class:"btn hide" %>
+                      </td>
+                      <td id="icon_h">
+                      <%= link_to (image_tag "trash.png", style: 'height: 1.875rem;width: 1.875rem;' ), note,class:"btn hide", method: :delete, data: { confirm: 'Are you sure?' } %>
+                      </td>
+                      </table>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<br>
+

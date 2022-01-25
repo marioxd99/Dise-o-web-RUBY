@@ -1,0 +1,12 @@
+<div class="container-fluid" >
+  <div class="card" id="note_container">
+
+<p>
+  <strong>Email:</strong>
+  <%= @user.email %>
+</p>
+ </div>
+    </div>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', notes_path %>

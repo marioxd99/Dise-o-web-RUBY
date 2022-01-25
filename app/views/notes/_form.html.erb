@@ -1,0 +1,52 @@
+<div style="margin-left: 20vw;">
+<%= form_with(model: note) do |form| %>
+  <% if note.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(note.errors.count, "error") %> prohibited this note from being saved:</h2>
+
+      <ul>
+        <% note.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+<br/>
+  <div class="field form-group">
+    <%= form.text_field :title ,class:"form-control ",placeholder:"Title" %>
+  </div>
+<br/>
+  <div class="field form-group">
+    <%= form.text_area :description ,class:"form-control t-area",placeholder:"Description" %>
+  </div>
+<br/>
+
+  <div class="field form-group">
+    <% @collection = Collection.all %>
+    <label for="note[collection_id]">Colection: </label>&nbsp;&nbsp;
+    <%= collection_select(:note, :collection_id, @collection.where(user: current_user), :id, :title,
+      { include_blank: 'Select a collection' },  { :class=>'form-control', :style=>"min-width: 50vw;"}) %>
+  </div>
+<br/>
+<div class="row">
+  
+
+  <div class="col-sm">
+    <% form.text_field :image , class:"btn" %>
+    
+    <%= form.file_field :image , class:"btn b-file" %>
+  </div>
+
+  <div class="field form-group">
+    <%= form.text_field :user_id ,id: :note_user_id , type: :hidden, class:"form-control", value:note.user_id %>
+  </div>
+  
+<div class="col-sm">
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+</div>
+</div>
+  
+<% end %>
+</div>

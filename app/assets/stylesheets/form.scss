@@ -1,0 +1,32 @@
+.form-control {
+    color:#000;
+    width:75%;
+    transition: 0.5s ease-in;
+    background-color : #d1d1d1;
+ }
+
+.form-control:focus[type="text"]{
+    color: #000;
+    background-color : #fff;
+    
+}
+
+.form-control[type="text"] {
+    background-color : #d1d1d1; 
+      
+}
+
+.form-control:focus {   
+    box-shadow: none;
+    outline: none;
+}
+
+.form-control::placeholder {
+    color: #000;
+    
+}
+
+.t-area{
+    height: 250px;
+}
+

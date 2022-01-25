@@ -1,0 +1,10 @@
+var fecha = new Date().getDay();
+var semana0 = "Happy Sunday!";
+var semana1 = "Happy Monday!";
+var semana2 = "Happy Tuesday!";
+var semana3 = "Happy Wednesday!";
+var semana4 = "Happy Thursday!";
+var semana5 = "Happy Friday!";
+var semana6 = "Happy Saturday!";
+var hoy = eval("semana" + fecha);
+document.getElementById("miDia").textContent = eval("semana" + fecha);

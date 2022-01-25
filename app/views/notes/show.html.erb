@@ -1,0 +1,23 @@
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+<div class="container-fluid" style="padding:20px;">
+  <div class="card" id="note_container">
+  
+<div class="container bootstrap snippets bootdey">
+    <div class="row">
+		<ul class="notes">
+            <li>
+                <div class="rotate-1 lazur-bg">
+                    <% if @note.image.blank? %>
+                    <% else %>
+                        <%= image_tag(@note.image , style:'width:210px;height:200px') %>
+                    <% end %> 
+                    <h4><%= @note.title %></h4>
+                    <p><%= @note.description %></p>
+
+                </div>
+            </li> 
+    </ul>  
+   </div>
+</div>  
+<%= link_to 'Back', Note, class:"btn btn-primary" ,style:"width:80px;margin:10px;" %>
+
